@@ -20,15 +20,17 @@ git clone https://github.com/cpopescu/linux-install.git
 sudo ~/src/linux-install/bin/install_base.sh
 ```
 
-4/ *Optional*: Install cuda libs (on x64 architecutre):
+4/ Install build tools (as user, requires some `sudo` internally):
+```sh
+sudo ~/src/linux-install/bin/install_tools.sh
+```
+Then update the env: `source ~/.bash
+
+5/ *Optional*: Install cuda libs (on x64 architecutre):
 ```sh
 sudo ~/src/linux-install/bin/install_cuda.sh
 ```
 
-5/ Install build tools (as user, requires some `sudo` internally):
-```sh
-sudo ~/src/linux-install/bin/install_tools.sh
-```
 
 6/ *Optional*: Install test tools:
 ```sh

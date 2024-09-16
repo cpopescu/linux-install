@@ -2,16 +2,13 @@
 
 set -e
 
-echo ">>>>>>>>>>>>>>>>>>>> Setup paths"
-export PATH="${PATH}:~/.local/bin"
-echo 'export PATH="${PATH}:~/.local/bin"' >> ~/.bashrc
-echo 'PATH="${PATH}:/usr/lib/go-1.21/bin/:${HOME}/go/bin"' >> ~/.bashrc
-# Small hack: Force .bashrc to execute the rest of the file even if not interactive
-sed -i.bak 's/return;;/;;\#return;;/g' ~/.bashrc
-
 echo ">>>>>>>>>>>>>>>>>>>> Install latest pipx version:"
 pipx install pipx
 sudo apt purge -y --autoremove pipx
+
+export PATH="${PATH}:~/.local/share"
+echo 'export PATH="${PATH}:~/.local/share"' >> ~/.bashrc
+source ~/.bashrc
 
 echo ">>>>>>>>>>>>>>>>>>>> Install tools:"
 sudo apt-get install -y \
