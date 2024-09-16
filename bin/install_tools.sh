@@ -5,6 +5,8 @@ set -e
 [[ ${USER} == "root" ]] && { echo "Please do not run as root"; exit 1; }
 
 echo ">>>>>>>>>>>>>>>>>>>> Setup paths"
+echo "export CC=gcc" >> ~/.bashrc
+echo "export CXX=g++" >> ~/.bashrc
 export PATH="${PATH}:${HOME}/.local/bin:/usr/lib/go-1.21/bin/:${HOME}/go/bin"
 echo 'export PATH="${PATH}:${HOME}/.local/bin:/usr/lib/go-1.21/bin/:${HOME}/go/bin"' >> ~/.bashrc
 # Small hack: Force .bashrc to execute the rest of the file even if not interactive
@@ -56,7 +58,8 @@ sudo apt-get install -y \
 curl -o "docker-desktop-${DOCKER_VERSION}-${ARCH}.deb" \
      "https://desktop.docker.com/linux/main/${ARCH}/136059/docker-desktop-${DOCKER_VERSION}-${ARCH}.deb"
 sudo dpkg -i "docker-desktop-${DOCKER_VERSION}-${ARCH}.deb" || sudo apt-get –fix-broken install || true
-
+sudo usermod -aG docker ${USER}
+sudo setfacl --modify user:${USER}:rw /var/run/docker.sock
 
 echo "Installing google cloud client"
 

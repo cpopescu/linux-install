@@ -7,7 +7,9 @@ set -e
 echo ">>>>>>>>>>>>>>>>>>>> Install bigquery emulator"
 
 ## This takes a long time to build, as we install it from source
-source ~/.bashrc && export CGO_ENABLED=1 && export CXX=clang++ && export CC=clang && go install github.com/goccy/bigquery-emulator/cmd/bigquery-emulator@latest
+source ~/.bashrc && export CGO_ENABLED=1 && export CXX=clang++ && export CC=clang &&
+    go install github.com/goccy/bigquery-emulator/cmd/bigquery-emulator@latest || {
+        echo "Failed to install bigquery emulator"; exit 1; }
 
 echo ">>>>>>>>>>>>>>>>>>>> Install bigtable emulator"
 sudo apt-get install -y google-cloud-cli-bigtable-emulator
