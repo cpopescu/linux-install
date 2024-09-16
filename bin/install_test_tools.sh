@@ -2,6 +2,8 @@
 
 set -e
 
+[[ ${USER} == "root" ]] && { echo "Please do not run as root"; exit 1; }
+
 echo ">>>>>>>>>>>>>>>>>>>> Install bigquery emulator"
 
 ## This takes a long time to build, as we install it from source

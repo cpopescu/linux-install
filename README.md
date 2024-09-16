@@ -31,8 +31,7 @@ Then update the env: `source ~/.bash
 ~/src/linux-install/bin/install_cuda.sh
 ```
 
-
 6/ *Optional*: Install test tools:
 ```sh
-sudo ~/src/linux-install/bin/install_test_tools.sh
+~/src/linux-install/bin/install_test_tools.sh
 ```
