@@ -10,9 +10,9 @@ sudo apt-get install -y git
 
 2/ Install this repo
 ```sh
-mkdir ~/src && cd ~/src
+mkdir -p ~/src
+cd ~/src
 git clone https://github.com/cpopescu/linux-install.git
-cd linux-install
 ```
 
 3/ Install base tools:

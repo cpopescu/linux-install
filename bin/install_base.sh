@@ -22,7 +22,7 @@ apt-get install -y \
     sudo \
     adduser \
     golang-1.21 \
-    tzdata
+    tzdata \
     pipx \
     curl \
     gpg \
