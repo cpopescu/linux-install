@@ -2,9 +2,9 @@
 
 set -e
 
-[[ ${USER} == "root" ]] || { echo "Please run as root"; exit 1; }
+[[ ${USER} == "root" ]] && { echo "Please do not run as root"; exit 1; }
 
-apt-get install -y \
+sudo apt-get install -y \
     nvidia-cuda-toolkit
 
 UNAME=$(uname -m)

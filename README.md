@@ -28,7 +28,7 @@ Then update the env: `source ~/.bash
 
 5/ *Optional*: Install cuda libs (on x64 architecutre):
 ```sh
-sudo ~/src/linux-install/bin/install_cuda.sh
+~/src/linux-install/bin/install_cuda.sh
 ```
 
 
