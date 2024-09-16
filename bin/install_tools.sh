@@ -55,8 +55,8 @@ sudo apt-get install -y \
      docker-compose-plugin
 curl -o "docker-desktop-${DOCKER_VERSION}-${ARCH}.deb" \
      "https://desktop.docker.com/linux/main/${ARCH}/136059/docker-desktop-${DOCKER_VERSION}-${ARCH}.deb"
-sudo dpkg -i "docker-desktop-${DOCKER_VERSION}-${ARCH}.deb"
-sudo apt-get –fix-broken install
+sudo dpkg -i "docker-desktop-${DOCKER_VERSION}-${ARCH}.deb" || true
+sudo apt-get –fix-broken install || true
 
 
 echo "Installing google cloud client"
