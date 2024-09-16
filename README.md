@@ -15,14 +15,14 @@ cd ~/src
 git clone https://github.com/cpopescu/linux-install.git
 ```
 
-3/ Install base tools:
+3/ Install base packages:
 ```sh
 sudo ~/src/linux-install/bin/install_base.sh
 ```
 
 4/ Install build tools (as user, requires some `sudo` internally):
 ```sh
-sudo ~/src/linux-install/bin/install_tools.sh
+~/src/linux-install/bin/install_tools.sh
 ```
 Then update the env: `source ~/.bash
 

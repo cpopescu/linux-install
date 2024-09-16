@@ -55,10 +55,3 @@ chmod a+x /usr/bin/bazel
 
 ln -sf /usr/bin/python3.12 /usr/bin/python3
 hash -r
-
-echo ">>>>>>>>>>>>>>>>>>>> Setup paths"
-export PATH="${PATH}:~/.local/bin"
-echo 'export PATH="${PATH}:~/.local/bin"' >> ~/.bashrc
-echo 'PATH="${PATH}:/usr/lib/go-1.21/bin/:${HOME}/go/bin"' >> ~/.bashrc
-# Small hack: Force .bashrc to execute the rest of the file even if not interactive
-sed -i.bak 's/return;;/;;\#return;;/g' ~/.bashrc
