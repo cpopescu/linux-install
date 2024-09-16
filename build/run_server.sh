@@ -3,6 +3,7 @@
 mkdir -p ~/logs
 
 function start_server {
+    echo "Starting worker"
     cd ~/src/bazel-buildfarm
     bazel run //src/main/java/build/buildfarm:buildfarm-server \
           -- --jvm_flag=-Djava.util.logging.config.file=${PWD}/examples/logging.properties \

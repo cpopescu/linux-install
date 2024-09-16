@@ -3,6 +3,7 @@
 mkdir -p ~/logs
 
 function start_worker {
+    echo "Starting worker"
     cd ~/src/bazel-buildfarm
     bazel run //src/main/java/build/buildfarm:buildfarm-shard-worker -- \
           --prometheus_port=9091 \
